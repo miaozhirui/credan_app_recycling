@@ -1,0 +1,20 @@
+{
+  "name": "storage",
+  "description": "Asynchronous browser storage with multiple back-ends (IndexedDB, WebSQL, localStorage)",
+  "version": "1.5.0",
+  "keywords": [
+    "offline",
+    "storage",
+    "localForage"
+  ],
+  "ignore": [
+    "**/.*",
+    "lib/",
+    "test/",
+    "component.json",
+    "package.json"
+  ],
+  "main": [
+    "dist/storage.js"
+  ]
+}

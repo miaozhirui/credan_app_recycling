@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script>
+    $.ajax('/ticket', {
+
+            method: 'get',
+            data: {
+
+                url: encodeURIComponent(location.href)
+            }
+        })
+        .then(function(data) {
+
+            wx.config({
+                debug: true,
+                appId: data.appId,
+                timestamp: data.timestamp,
+                nonceStr: data.nonceStr,
+                signature: data.signature,
+                jsApiList: [
+                    'onMenuShareTimeline',
+                    'onMenuShareAppMessage'
+                ]
+            });
+
+
+            //分享到朋友圈
+            wx.onMenuShareTimeline({
+                title: '自定义标题',
+                link: 'http://test.miaozhirui.com/h5/',
+                imgUrl: 'https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top_ca79a146.png',
+                success: function() {
+
+                    alert('success')
+                },
+                cancel: function() {
+
+                    alert('fail')
+                }
+            });
+
+            wx.onMenuShareAppMessage({
+                title: '分享标题',
+                desc: '分享描述',
+                link: 'http://test.miaozhirui.com/h5/',
+                imgUrl: 'https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top_ca79a146.png',
+                success: function() {
+
+                    alert('success')
+                },
+                cancel: function() {
+                    alert('cancel')
+                }
+            });
+        })
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

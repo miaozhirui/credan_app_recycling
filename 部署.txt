@@ -1,0 +1,18 @@
+##部署到浏览器服务器
+
+npm run test:recycling
+scp -r ./www/** root@47.96.12.218:/usr/local/tomcat/war/credan_app/recycling
+密码: Credan!88
+
+
+##部署到app
+
+npm run testapp:recycling
+npm run buildapp:recycling
+
+
+
+
+##android相关的环境变量
+ANDROID_HOME=/Users/mzr/Library/Android/sdk
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home
