@@ -7,9 +7,19 @@ scp -r ./www/** root@47.96.12.218:/usr/local/tomcat/war/credan_app/recycling
 
 ##部署到app
 
+1.
 npm run testapp:recycling
 npm run buildapp:recycling
 
+2. 
+cordova-hcp build
+
+3. 在www/chcp.json文件添加一下代码
+"content_url": "http://app1.credan.com/app/hots/recycling_one/", 
+"update": "now"
+
+4. 将代码上传到服务器
+scp -r ./www/** root@118.190.68.17:/usr/local/www/app/hots/recycling_one
 
 
 

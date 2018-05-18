@@ -27,7 +27,7 @@ const page = {
                 aheadRepay: 0,
                 planId: this.planId,
                 fundRepayAccountId: this.fundRepayAccountId,
-                redirectUrl: location.href
+                redirectUrl: utils.getllPayRedirectUrl()
             }
 
             let promise = utils.fetch({
@@ -46,13 +46,9 @@ const page = {
 
                     })
 
-                    //app的支付方式
                     toLLPay(data.data);
                     
-                    //浏览器端的支付方式=======
-                    // storage.set('payInfo', data.data);
-
-                    // utils.go("ll2pay-page");
+                  
                 } else {
 
                     utils.tipInfo({

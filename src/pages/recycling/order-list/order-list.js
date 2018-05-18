@@ -24,7 +24,6 @@ const page = {
         promise.then(res => {
 
             this.orderList = res;
-            console.log(this.orderList)
         })
     },
 
@@ -101,14 +100,15 @@ const page = {
 
                 planId: item.repayingSid,
                 fundRepayAccountId: item.fundRepayAccountId,
-                money: item.lendMoney
+                money: item.lendMoney + item.overdueFee
             })
         },
 
         toRenewLease(item) {
             
             storage.set('planId', item.repayingSid);
-            storage.set('lendTime', item.lendTime);
+            storage.set('termDate', item.termDate);
+            storage.set('fundRepayAccountId', item.fundRepayAccountId)
 
             utils.go('renew-lease-page')
         },

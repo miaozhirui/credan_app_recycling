@@ -242,7 +242,7 @@ export default {
                     clearInterval(timer);
 
                     loadingTip && self.hideLoading();
-                    
+
                     if (error.toString().indexOf('Network Error') > -1) {
 
                         self.tipInfo({
@@ -412,13 +412,13 @@ export default {
     },
     //判断用户是否登录了
     judgeIsLogin(opt) {
-    
+
         let isNeedIdentity = (typeof opt.isNeedIdentity === 'undefined' || !!opt.isNeedIdentity) ? true : false;
 
         if (!isNeedIdentity) return false; //如果不需要身份校验，返回
 
         let identityInfo = storage.get('identityInfo');
-        
+
         if (identityInfo) {
 
             return identityInfo;
@@ -445,10 +445,10 @@ export default {
         queryString = queryString.slice(0, -1);
 
         let wholeUrl = !!queryString ? `${url}?${queryString}` : url;
-        
+
         //存储路由栈
-        if(process.env.NODE_PLATFORM == 'app') {
-            
+        if (process.env.NODE_PLATFORM == 'app') {
+
             this.storageUrlStack(location.href);
         }
 
@@ -657,6 +657,23 @@ export default {
         }
 
         return url.slice(0, -1);
+    },
+
+    //获取连连支付成功之后的回调地址
+    getllPayRedirectUrl(opts) {
+
+
+        if (process.env.NODE_PRODUCT == 'app') {
+
+            return 'close-pay-window';
+        } else {
+
+            opts = typeof opts === 'undefined' ? {} : opts;
+
+            let redirectUrl = opts.redirectUrl || location.href;
+
+            return redirectUrl;
+        }
     }
 
 }

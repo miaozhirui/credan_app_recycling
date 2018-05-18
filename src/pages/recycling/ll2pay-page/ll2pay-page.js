@@ -22,6 +22,18 @@ const page = {
 
     mounted() {
 
+        if (process.env.NODE_PLATFORM != 'app') {
+            
+            this.payData = storage.get('payInfo');
+
+            Vue.nextTick(() => {
+
+                document.querySelector('#llpay').submit();
+            })
+            return;
+        }
+
+
         let timer = setInterval(() => {
 
             if (window.llpayData) {

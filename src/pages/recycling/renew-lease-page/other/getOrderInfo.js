@@ -5,24 +5,23 @@ export default data => {
 
     return new Promise((resolve, reject) => {
 
-         let delayDays = data.day;
+         let putOffDays = data.day;
          let planId = storage.get('planId');
 
          let params = {
 
-            delayDays,
+            putOffDays,
             planId
          }
-
+        
         let promise = utils.fetch({
 
-            url: '/v16/putOffFee',
+            url: '/wx/v16/putOffFee',
             data: params
         })
 
 
         promise.then(res => {
-
 
             resolve(res);
         })

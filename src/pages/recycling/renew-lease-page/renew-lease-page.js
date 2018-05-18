@@ -14,7 +14,7 @@ const page = {
             day: 7,
             isAgreeProtocal: false,
             orderInfo: {},
-            lendTime:''
+            termDate:''
         }
     },
 
@@ -23,7 +23,8 @@ const page = {
         this.recyclingDays = data.recyclingDays;
         
         this.planId = storage.get('planId');
-        this.lendTime = storage.get('lendTime');
+        this.termDate = storage.get('termDate');
+        this.fundRepayAccountId = storage.get('fundRepayAccountId');
         
         let promise = getOrderInfo({
 
@@ -32,7 +33,7 @@ const page = {
 
         promise.then(res => {
 
-            this.orderInfo = res;
+            this.orderInfo = res.data;
         })
     },
 
@@ -52,7 +53,7 @@ const page = {
         },
         getExpireDate() {
         
-            return +this.lendTime + this.day * 24 * 60 * 60 * 1000;
+            return +this.termDate + this.day * 24 * 60 * 60 * 1000;
         }
     },
 
@@ -62,9 +63,9 @@ const page = {
            
             let data = {
 
-                fundRepayAccountId: 501,
+                fundRepayAccountId: this.fundRepayAccountId,
                 planId: this.planId,
-                redirectUrl: 'close-pay-window',
+                redirectUrl: utils.getllPayRedirectUrl(),
                 putOffDays: this.day
             }
 
@@ -105,7 +106,7 @@ const page = {
 
             promise.then(res => {
             
-                this.orderInfo = res;
+                this.orderInfo = res.data;
                 
                 this.recyclingDays.forEach(item => {
 
