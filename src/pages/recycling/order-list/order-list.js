@@ -55,7 +55,7 @@ const page = {
                         return "待回购"
                     }
 
-                    if(item.overdueDays > 0) {
+                    if(item.overdueDays > 0) {//已逾期
 
                         return '已逾期'
                     }
@@ -118,9 +118,19 @@ const page = {
             window.location.reload();
         },
 
-        buybackPrice(){
+        buybackPrice(item){
 
             return item.repayMoney + item.overdueFee;
+        },
+
+        isShowRenewBtn(item) {
+
+            if(item.status == 6 && item.repayStatus == 1 && item.overdueDays > 0){
+
+                return false;
+            }
+
+            return true;
         }
     }
 }

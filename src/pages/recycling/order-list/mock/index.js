@@ -17,7 +17,7 @@ module.exports = {
                 repayMoney: 120, //应还款金额number
                 status: 6, //状态number
                 termDate: '', //还款日期string
-                repayStatus: 2, //还款状态 number
+                repayStatus: 1, //还款状态 number
                 termNum: 7,
                 lendTime: '1513500446000',
                 loanId: 12312312312312312,

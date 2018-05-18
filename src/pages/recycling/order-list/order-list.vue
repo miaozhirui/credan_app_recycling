@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="footer db br bm" v-if="isShowBtn(item)">
-                    <button @click="toRenewLease(item)">续租</button>
+                    <button @click="toRenewLease(item)" v-if="isShowRenewBtn(item)">续租</button>
                     <button @click="toRepurchase(item)">回购</button>
                 </div>
             </li>
