@@ -10,7 +10,7 @@
 
                     <div class="db layout">
                         <div class="left db1">回购价格</div>
-                        <div class="right db1 br bm">¥ {{ buyBackPrice(item) | decimal }}</div>
+                        <div class="right db1 br bm">¥ {{ item.repayMoney | decimal }}</div>
                     </div>
                     <div class="db layout">
                         <div class="left db1">租约到期日期</div>

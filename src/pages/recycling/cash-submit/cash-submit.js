@@ -33,7 +33,7 @@ const page = {
     created() {
 
         // other.getSessionId();
-        
+
         // if (!storage.get('gpsMsg') || !storage.get('gpsMsg').latitude) {
 
         //     this.showGpsBox = true
@@ -42,8 +42,8 @@ const page = {
         // this.productId = utils.getParams('productId')
         this.productId = storage.get('productId');
         // this.idenVerify = utils.getParams('idenVerify') == 'true' ? true : '';
-        
-        this.idenVerify = !!storage.session.get('idenVerify') ? true: false;
+
+        this.idenVerify = !!storage.session.get('idenVerify') ? true : false;
 
         this.judgeIsOperatorVerify();
 
@@ -178,9 +178,9 @@ const page = {
         },
 
         btnOperator() {
-            
-            if(!this.idenVerify){
-                
+
+            if (!this.idenVerify) {
+
                 utils.tipInfo({
 
                     content: '请先进行身份验证'
@@ -188,7 +188,7 @@ const page = {
 
                 return;
             }
-            
+
 
             let promise = utils.fetch({
 
@@ -197,7 +197,7 @@ const page = {
                 data: {
                     name: '0',
                     idNum: '0',
-                    returnUrl:"http://uctest.credan.com/recycling/pages/cash-submit.html"
+                    returnUrl: "http://uctest.credan.com/recycling/pages/cash-submit.html"
                 },
                 api: true
             })
@@ -215,7 +215,30 @@ const page = {
                 }
 
                 //跳到rong360运营商验证，验证通过之后的回调地址(http://uctest.credan.com/v1.5.1/rong360back.html?userId=d9a6e129762142bcab29e4ec1aade185&outUniqueId=20171225145920644b6883e8f44eceb48500e88aebc987&state=login)
-                location.href = data;
+                
+
+                if (process.env.NODE_PLATFORM == 'app') {
+
+                    let ref = cordova.InAppBrowser.open(data, '_blank', 'location=no');
+                    ref.addEventListener('loadstart', event => {
+
+                        let url = event.url;
+
+                        if (url.indexOf('outUniqueId') > -1) {
+
+                            let operatorVerifyBtn = document.getElementById('operatorVerify')
+
+                            operatorVerifyBtn.setAttribute("style", "color: #9A9A9A");
+
+                            operatorVerifyBtn.value = "已认证"
+
+                            ref.close();
+                        }
+                    })
+                } else {
+        
+                    location.href = data;
+                }
             })
 
         },
@@ -371,7 +394,7 @@ const page = {
 
             let outUniqueId = utils.getParams('outUniqueId');
 
-            if(!outUniqueId) return;
+            if (!outUniqueId) return;
 
             let promise1 = utils.fetch({
 

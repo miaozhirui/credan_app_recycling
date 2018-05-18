@@ -24,7 +24,7 @@ const page = {
     },
 
     created() {
-
+      
         let phoneLists = data.phoneLists;
         let productId = 10;
         let firmId = 11;

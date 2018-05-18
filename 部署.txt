@@ -11,18 +11,29 @@ scp -r ./www/** root@47.96.12.218:/usr/local/tomcat/war/credan_app/recycling
 npm run testapp:recycling
 npm run buildapp:recycling
 
+
+
 2. 
 cordova-hcp build
 
 3. 在www/chcp.json文件添加一下代码
-"content_url": "http://app1.credan.com/app/hots/recycling_one/", 
+"content_url": "http://www.wangluodaikuankouzi.com/app/hots/recyclingone", 
 "update": "now"
 
-4. 将代码上传到服务器
-scp -r ./www/** root@118.190.68.17:/usr/local/www/app/hots/recycling_one
+4. cordova build ios
 
+
+5. 将代码上传到服务器
+scp -r ./www/** root@118.190.68.17:/usr/local/www/app/hots/recyclingone
 
 
 ##android相关的环境变量
 ANDROID_HOME=/Users/mzr/Library/Android/sdk
 JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home
+
+
+
+
+
+
+

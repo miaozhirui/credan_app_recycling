@@ -7,14 +7,29 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-hot-code-push-plugin": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
+        "cordova-plugin-brightness": {
+            "PACKAGE_NAME": "com.credan.saas"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "com.credan.saas"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.credan.saas"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.credan.saas"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.credan.saas"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.credan.saas"
         },
         "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
+            "PACKAGE_NAME": "com.credan.saas"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
+            "PACKAGE_NAME": "com.credan.saas"
         }
     },
     "dependent_plugins": {}

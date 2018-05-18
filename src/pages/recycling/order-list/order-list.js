@@ -111,11 +111,6 @@ const page = {
             storage.set('fundRepayAccountId', item.fundRepayAccountId)
 
             utils.go('renew-lease-page')
-        },
-
-        buyBackPrice(item) {
-
-            return item.overdueFee + item.lendMoney;
         }
     }
 }
