@@ -10,7 +10,7 @@
 
                     <div class="db layout">
                         <div class="left db1">回购价格</div>
-                        <div class="right db1 br bm">¥ {{ item.repayMoney | decimal }}</div>
+                        <div class="right db1 br bm">¥ {{ buybackPrice(item) | decimal }}</div>
                     </div>
                     <div class="db layout">
                         <div class="left db1">租约到期日期</div>
@@ -36,6 +36,12 @@
             </li>
         </ul>
         <p class="empty" v-if="orderList.length==0">您还没有订单</p>
+
+         <!-- 刷新当前页面的按钮 -->
+        <div class="refresh db bc bm fc" @click="refreshPage">
+            <span class="icon"></span>
+            <p>点击刷新</p>
+        </div>
     </div>
 </template>
     

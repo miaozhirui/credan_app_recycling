@@ -100,7 +100,7 @@ const page = {
 
                 planId: item.repayingSid,
                 fundRepayAccountId: item.fundRepayAccountId,
-                money: item.lendMoney + item.overdueFee
+                money: item.repayMoney + item.overdueFee
             })
         },
 
@@ -111,6 +111,16 @@ const page = {
             storage.set('fundRepayAccountId', item.fundRepayAccountId)
 
             utils.go('renew-lease-page')
+        },
+        //刷新页面
+        refreshPage() {
+
+            window.location.reload();
+        },
+
+        buybackPrice(){
+
+            return item.repayMoney + item.overdueFee;
         }
     }
 }
