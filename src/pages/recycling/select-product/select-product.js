@@ -16,7 +16,7 @@ const page = {
         return {
 
             productList: [], //产品列表
-            productPrice: '4000',
+            productPrice: '3000',
             isAgreeProtocal: false,
             agreement:agreement,
             isShowAgreement: false

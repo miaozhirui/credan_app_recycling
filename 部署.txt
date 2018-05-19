@@ -1,8 +1,14 @@
 ##部署到浏览器服务器
 
+//测试服务器
 npm run test:recycling
 scp -r ./www/** root@47.96.12.218:/usr/local/tomcat/war/credan_app/recycling
 密码: Credan!88
+
+//正式服务器
+npm run build:recycling
+scp -r ./www/** root@118.190.68.17:/usr/local/tomcat/war/credan_h5/recycling
+
 
 
 ##部署到app
