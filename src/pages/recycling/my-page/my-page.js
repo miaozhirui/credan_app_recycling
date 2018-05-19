@@ -34,6 +34,13 @@ const page = {
         toOrderList() {
 
             utils.go('order-list');
+        },
+        logout() {
+
+            storage.remove('identityInfo');
+            storage.remove('phone');
+
+            utils.go('user-login')
         }
     }
 }

@@ -134,6 +134,7 @@ dir.forEach((pathname, index) => {
         template: allTpls[pathname],
         inject: true,
         chunksSortMode: 'dependency',
+        NODE_PLATFORM: process.env.NODE_PLATFORM
     }
 
     if (pagename in module.exports.entry) {

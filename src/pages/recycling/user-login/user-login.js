@@ -71,9 +71,12 @@ const page = {
 
             let deviceType = typeof device !== 'undefined' ? device.platform : '';
 
-            let redirectUrl = location.href.slice(location.href.indexOf('redirectUrl=') + 12);
+            let redirectUrl = location.href.indexOf('redirectUrl=') > -1 ?
+                             location.href.slice(location.href.indexOf('redirectUrl=') + 12)
+                             : '';
 
             let params = querystring.parse(redirectUrl.slice(redirectUrl.indexOf('?') + 1));
+           
 
             this.productId = params.productId;
             this.baseId = params.baseId;
@@ -176,8 +179,14 @@ const page = {
             //只有首页为登录页面的时候，才会在登录页面保存全局的数据
             (this.firstPage == 'login') && saveGlobalParams({ productId, baseId, firmId, loanerSid });
             
-            // utils.go('select-product');
-            window.location.href = redirectUrl;
+            if(!!redirectUrl) {
+
+                window.location.href = redirectUrl;
+            } else {
+
+                utils.go('select-product');
+            }
+            
         },
 
         toAgree() {
