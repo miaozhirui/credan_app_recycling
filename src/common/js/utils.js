@@ -670,10 +670,20 @@ export default {
 
             opts = typeof opts === 'undefined' ? {} : opts;
 
-            let redirectUrl = opts.redirectUrl || location.href;
+            let redirectUrl = opts.redirectUrl || `${location.protocol}//${location.host}/recycling/pages/order-list.html`;
 
             return redirectUrl;
         }
+    },
+
+    isIphone() {
+
+        if(navigator.userAgent.toLowerCase().indexOf('iphone') > -1) {
+
+            return true;
+        }
+
+        return false;
     }
 
 }

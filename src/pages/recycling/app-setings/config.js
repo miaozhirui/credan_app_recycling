@@ -60,6 +60,10 @@ module.exports = {
         "isHasBack": false,
         isShowTabBar: true,
         highlightSecond: true
+    },
+    "app-download":{
+
+        "title":"下载页面"
     }
 
 }
