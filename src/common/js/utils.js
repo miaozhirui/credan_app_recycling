@@ -130,6 +130,8 @@ export default {
 
         return new Promise((resolve, reject) => {
 
+            // if(!this.judgeIsAgreeContact()) return ;//如果没有同意的话，返回false,不允许继续往下面操作
+
             let e = new EventEmitter()
             e.on('overtime', () => {
 
@@ -280,6 +282,28 @@ export default {
                     // self.saveErrorLog(JSON.stringify(error));
                 })
         })
+    },
+
+    judgeIsAgreeContact() {
+            
+        let isAgreeContact = storage.get('isAgreeContact');
+
+        if(!isAgreeContact) {
+
+            this.tipInfo({
+                content: "授权通讯录才能继续操作",
+                callback: () => {
+
+                    this.go('guide-install-app')
+                }
+                
+            })
+
+
+            return false;
+        }
+
+        return true;
     },
 
     //生成提交到后台的数据
@@ -663,7 +687,7 @@ export default {
     getllPayRedirectUrl(opts) {
 
 
-        if (process.env.NODE_PRODUCT == 'app') {
+        if (process.env.NODE_PLATFORM == 'app') {
 
             return 'close-pay-window';
         } else {

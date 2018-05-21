@@ -52,7 +52,8 @@ module.exports = {
         "title": "审核"
     },
     "user-login":{
-        "title":"登录"
+        "title":"必须登录",
+        "isHasBack": false,
     },
     "my-page":{
 
@@ -63,6 +64,9 @@ module.exports = {
     },
     "app-download":{
 
+        "title":"下载页面"
+    },
+    "aiguigou-download":{
         "title":"下载页面"
     }
 

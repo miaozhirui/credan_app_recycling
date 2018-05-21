@@ -26,7 +26,7 @@ class PullMonster {
             url: '/wx/sendVerificationCode',
             data: {
                 phone,
-                firmId: 6
+                firmId: 11
             },
             isNeedIdentity: false,
             isUseDefaultIp

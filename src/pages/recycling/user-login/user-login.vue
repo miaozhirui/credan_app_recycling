@@ -24,7 +24,7 @@
         
         </div>
         <div class="footer">
-            <div class="agreement db">
+            <div class="agreement db bm">
                 <div class="left">
                     <span class="icon"
                     :class="{selected: isAgree}"
@@ -47,5 +47,6 @@
             <div class="content" v-html="agreement"></div>
         </div>
         
+        <div class="close-btn" @click="toHomePage" v-if="isShowCloseBtn"></div>
     </div>
 </template>

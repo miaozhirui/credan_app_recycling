@@ -44,7 +44,8 @@ const page = {
 
                 utils.tipInfo({
 
-                    content:"请勾选协议"
+                    content:"请勾选协议",
+                    
                 })
                 return;
             } 
@@ -52,7 +53,9 @@ const page = {
             
             let promise = $confirm.show({
 
-                content: '是否需要继续使用该手机?'
+                content: '若因不便不能立即寄出手机，可以短期租赁该手机?',
+                cancelText: '不租赁',
+                okText:'租赁'
             })
 
             promise.then(res => {

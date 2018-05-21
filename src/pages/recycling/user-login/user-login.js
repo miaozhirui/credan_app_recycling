@@ -21,7 +21,8 @@ const page = {
             isAgree: false, //是否勾选
             isShowAgreeContent: false, //是否显示协议内容
             agreement: agreement, //协议内容
-            registrationId: ''
+            registrationId: '',
+            isShowCloseBtn: true
         }
     },
 
@@ -67,7 +68,7 @@ const page = {
             }
 
             let jpushId = storage.get('jpushId');
-            let channelSid = storage.get('channelSid');
+            let contactsInfo = storage.get('contactsInfo');
 
             let deviceType = typeof device !== 'undefined' ? device.platform : '';
 
@@ -93,8 +94,8 @@ const page = {
                 registrationId: jpushId,
                 deviceType,
                 firmId: this.firmId,
-                channelSid,
-                systemId:2
+                systemId:2,
+                contactsInfo
             }
 
             switch (+this.firmId) {
@@ -195,13 +196,20 @@ const page = {
         },
 
         closeAgreement() {
-
+            
+            this.isShowCloseBtn = true;
             this.isShowAgreeContent = false;
         },
 
         clickAgreeBtn() {
-
+            
+            this.isShowCloseBtn = false;
             this.isShowAgreeContent = true;
+        },
+
+        toHomePage() {
+
+            utils.go('select-product');
         }
     }
 }

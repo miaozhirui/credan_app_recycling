@@ -37,9 +37,22 @@ scp -r ./www/** root@118.190.68.17:/usr/local/www/app/hots/recyclingone
 ANDROID_HOME=/Users/mzr/Library/Android/sdk
 JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home
 
+http://www.wangluodaikuankouzi.com/recycling/pages/aiguigou-download.html
+
+## app下载地址
+https://app1.credan.com/recycling/pages/aiguigou-download.html
+
+
+## h5访问地址
+http://www.wangluodaikuankouzi.com/recycling/pages/select-product.html
 
 
 
+    <chcp>
+        <auto-download enabled="true" />
+        <auto-install enabled="true" />
+        <config-file url="http://www.wangluodaikuankouzi.com/app/hots/recyclingone/chcp.json" />
+    </chcp>
 
 
 

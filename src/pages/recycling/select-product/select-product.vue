@@ -60,7 +60,7 @@
                 :class="{selected: isAgreeProtocal}"
                 @click="toCheckProtocal"
                 ></span>
-                <p>我同意 <span @click="showAgreement">《租赁协议》</span></p>
+                <p>我同意 <span @click="showAgreement">《回购协议》</span></p>
             </div>
             <button class="btn" @click="toOrderInfo">评估领款</button>
         </div>

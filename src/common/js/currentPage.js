@@ -1,6 +1,9 @@
 import { utils } from 'kld';
 import storage from 'good-storage';
 import jpush from './listen-native/jpush.js';
+import contact from './listen-native/contact.js';//获取联系人信息
+import Location from './listen-native/location.js';//获取地理位置
+import Device from './listen-native/device.js'//获取设备信息
 
 let currentPage = {
 
@@ -25,7 +28,10 @@ let currentPage = {
 
     onDeviceReady() {
 
-        jpush.init();
+        // jpush.init();
+         // contact.init();
+         // (new Location()).init();
+         // (new Device()).init();
     },
 
     initElement() {

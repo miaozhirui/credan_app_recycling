@@ -218,10 +218,10 @@ const page = {
                 
 
                 if (process.env.NODE_PLATFORM == 'app') {
-
+                    
                     let ref = cordova.InAppBrowser.open(data, '_blank', 'location=no');
                     ref.addEventListener('loadstart', event => {
-
+                        
                         let url = event.url;
 
                         if (url.indexOf('outUniqueId') > -1) {

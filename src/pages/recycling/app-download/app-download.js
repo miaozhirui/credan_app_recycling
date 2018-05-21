@@ -15,10 +15,10 @@ const page = {
 
             if(utils.isIphone()) {
 
-                location.href = "";
+                location.href = "https://www.pgyer.com/Efcj";
             } else {
 
-                location.href = "https://www.pgyer.com/E1cZ";
+                location.href = "https://www.pgyer.com/CPcD";
             }
         }
     }
