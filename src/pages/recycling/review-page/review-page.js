@@ -14,6 +14,7 @@ const page = {
         toOrderList() {
 
             utils.go('order-list')
+            utils.addEvent('审核页面到达');
         }
     }
 }

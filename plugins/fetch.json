@@ -60,7 +60,7 @@
     "cordova-plugin-contacts": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-contacts@^3.0.0"
+            "id": "cordova-plugin-contacts@3.0.0"
         },
         "is_top_level": true,
         "variables": {}

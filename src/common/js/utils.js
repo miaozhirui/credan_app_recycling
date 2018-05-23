@@ -49,23 +49,10 @@ export default {
     },
 
     //添加事件
-    addEvent: function() {
+    addEvent: function(eventId, label, mapkv) {
 
         let arrs = Array.prototype.slice.call(arguments);
-        let timer = null;
-        let merchantId = this.getParams('merchantId');
-        if (merchantId && merchantId !== '18fd13cc9aa611e6afb66c92bf314c17') {
-
-            arrs[0] = merchantId + '-' + arrs[0]
-        }
-
-        arrs[0] = arrs[0].replace(/(undefined)/, function($1, $2) {
-
-            if ($2 == 'undefined') {
-
-                return '闪电贷';
-            }
-        })
+        console.log(arrs)
 
         if (window.TDAPP) {
 
@@ -130,7 +117,7 @@ export default {
 
         return new Promise((resolve, reject) => {
 
-            // if(!this.judgeIsAgreeContact()) return ;//如果没有同意的话，返回false,不允许继续往下面操作
+            
 
             let e = new EventEmitter()
             e.on('overtime', () => {
@@ -240,7 +227,7 @@ export default {
                 })
 
                 .catch(error => {
-
+                    // alert(JSON.stringify(error))
                     clearInterval(timer);
 
                     loadingTip && self.hideLoading();
@@ -249,7 +236,7 @@ export default {
 
                         self.tipInfo({
 
-                            content: '服务器繁忙'
+                            content: '服务器繁忙-1'
                         })
                         return;
                     }
@@ -277,6 +264,7 @@ export default {
                         content: '服务器繁忙'
                     })
 
+
                     reject(error);
 
                     // self.saveErrorLog(JSON.stringify(error));
@@ -284,27 +272,7 @@ export default {
         })
     },
 
-    judgeIsAgreeContact() {
-            
-        let isAgreeContact = storage.get('isAgreeContact');
-
-        if(!isAgreeContact) {
-
-            this.tipInfo({
-                content: "授权通讯录才能继续操作",
-                callback: () => {
-
-                    this.go('guide-install-app')
-                }
-                
-            })
-
-
-            return false;
-        }
-
-        return true;
-    },
+    
 
     //生成提交到后台的数据
     generateSubmitData(options) {
@@ -702,7 +670,7 @@ export default {
 
     isIphone() {
 
-        if(navigator.userAgent.toLowerCase().indexOf('iphone') > -1) {
+        if (navigator.userAgent.toLowerCase().indexOf('iphone') > -1) {
 
             return true;
         }

@@ -68,6 +68,9 @@ module.exports = {
     },
     "aiguigou-download":{
         "title":"下载页面"
+    },
+    "guide-install-app":{
+        "title":"授权通讯录"
     }
 
 }

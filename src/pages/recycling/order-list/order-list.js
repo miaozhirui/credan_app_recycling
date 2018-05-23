@@ -25,6 +25,8 @@ const page = {
 
             this.orderList = res;
         })
+
+        utils.addEvent('订单列表页面到达');
     },
 
     methods: {

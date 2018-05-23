@@ -16,6 +16,8 @@ const page = {
         this.planId = utils.getParams('planId');
         this.fundRepayAccountId = utils.getParams('fundRepayAccountId');
         this.money = utils.getParams('money');
+
+        utils.addEvent('回购页面到达');
     },
 
     methods: {

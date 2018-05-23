@@ -13,7 +13,7 @@ const page = {
 
     created() {
 
-
+        utils.addEvent('连连支付页面到达');
     },
 
     methods: {

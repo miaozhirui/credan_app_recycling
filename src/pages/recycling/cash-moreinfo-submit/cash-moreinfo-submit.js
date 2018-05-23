@@ -121,7 +121,8 @@ const page = {
 
         this.getInfomation();
       }
-
+    
+      utils.addEvent('填写地址页面到达');
     },
 
     methods: {

@@ -35,6 +35,8 @@ const page = {
 
             this.orderInfo = res.data;
         })
+
+        utils.addEvent('续租页面到达');
     },
 
     computed: {

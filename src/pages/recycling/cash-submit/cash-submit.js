@@ -154,6 +154,8 @@ const page = {
 
             }
         })
+
+        utils.addEvent('四要素页面到达');
     },
     methods: {
 

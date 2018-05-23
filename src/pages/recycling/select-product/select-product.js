@@ -33,6 +33,8 @@ const page = {
         storage.set('firmId', firmId)
 
         this.productList = phoneLists;
+
+        utils.addEvent('产品选择页面到达');
     },
 
 

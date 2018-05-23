@@ -46,6 +46,8 @@ const page = {
 
             this.orderInfo = res;
         })
+
+        utils.addEvent('订单信息页面到达');
     },
 
     computed: {

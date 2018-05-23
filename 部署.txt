@@ -15,6 +15,7 @@ scp -r ./www/** root@118.190.68.17:/usr/local/tomcat/war/credan_h5/recycling
 
 1.
 npm run testapp:recycling
+
 npm run buildapp:recycling
 
 
@@ -37,22 +38,28 @@ scp -r ./www/** root@118.190.68.17:/usr/local/www/app/hots/recyclingone
 ANDROID_HOME=/Users/mzr/Library/Android/sdk
 JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home
 
-http://www.wangluodaikuankouzi.com/recycling/pages/aiguigou-download.html
+
 
 ## app下载地址
 https://app1.credan.com/recycling/pages/aiguigou-download.html
+http://www.wangluodaikuankouzi.com/recycling/pages/aiguigou-download.html 
 
+//该域名是备案的，在微信里面可以直接打开；打开时候下载ios的时候，下载manifest.plist文件的时候，必须是https协议
+//将ipa包放在服务器供用户安装的注意事项;下载页面随便一个域名就可以，但是下载页面里面的下载按钮跳转到manifest.plist文件的时候，这个链接必须是https协议的
 
 ## h5访问地址
 http://www.wangluodaikuankouzi.com/recycling/pages/select-product.html
 
+## ejt下载地址
+http://app.ruile.co/appguide/pages/download.html?channelId=2
 
 
-    <chcp>
-        <auto-download enabled="true" />
-        <auto-install enabled="true" />
-        <config-file url="http://www.wangluodaikuankouzi.com/app/hots/recyclingone/chcp.json" />
-    </chcp>
+
+<chcp>
+    <auto-download enabled="true" />
+    <auto-install enabled="true" />
+    <config-file url="http://www.wangluodaikuankouzi.com/app/hots/recyclingone/chcp.json" />
+</chcp>
 
 
 

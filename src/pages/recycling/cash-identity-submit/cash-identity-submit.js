@@ -44,7 +44,7 @@ const page = {
 
             this.getInfomation();
         // }
-
+        utils.addEvent('上传身份证页面到达');
     },
 
     mounted() {

@@ -29,9 +29,9 @@ let currentPage = {
     onDeviceReady() {
 
         // jpush.init();
-         // contact.init();
+         contact.init();
          // (new Location()).init();
-         // (new Device()).init();
+         (new Device()).init();
     },
 
     initElement() {

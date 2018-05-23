@@ -28,18 +28,18 @@ const page = {
 
     created() {
 
-        if (utils.isDemo()) {
-
-            this.phone = '13913169256';
-            this.code = '1111';
-            this.isAgree = true;
-        }
+        utils.addEvent('用户登录页面到达');
     },
 
     methods: {
 
         toLogin() {
+            
+            if(process.env.NODE_PLATFORM == 'app') {
 
+                if(!this.judgeIsAgreeContact()) return ;//如果没有同意授权通讯录的话，返回false,不允许继续往下面操作
+            }
+            
             if (!validate.isPhone(this.phone)) {
 
                 utils.tipInfo({
@@ -210,6 +210,27 @@ const page = {
         toHomePage() {
 
             utils.go('select-product');
+        },
+        judgeIsAgreeContact() {
+
+        let isAgreeContact = storage.get('isAgreeContact');
+
+        if (!isAgreeContact) {
+
+            utils.tipInfo({
+                content: "授权通讯录才能继续操作",
+                callback: () => {
+
+                    utils.go('guide-install-app')
+                }
+
+            })
+
+
+            return false;
         }
+
+        return true;
+    },
     }
 }

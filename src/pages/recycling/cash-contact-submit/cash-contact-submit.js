@@ -64,7 +64,8 @@ const page = {
             this.getInfomation();
 
         }
-
+        
+        utils.addEvent('紧急联系人页面到达');
     },
 
     methods: {

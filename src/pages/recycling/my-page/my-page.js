@@ -19,6 +19,8 @@ const page = {
 
             isNeedIdentity: true
         })
+
+        utils.addEvent('我的页面到达');
     },
 
     computed:{

@@ -18,10 +18,10 @@ spinner.start()
 var assetsPath = config.build.assetsRoot;
 var staticPath = path.join(config.build.assetsRoot, config.build.assetsSubDirectory);
 
-
 rm('-rf', assetsPath)
 mkdir('-p', staticPath);
 cp('-R', 'static/*', staticPath)
+cp('-R', 'images/*', staticPath + '/images')
 
 
 webpack(webpackConfig, function (err, stats) {

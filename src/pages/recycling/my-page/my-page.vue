@@ -29,7 +29,7 @@
 
         <div class="desc">
             <p>温馨提示:</p>
-            <p>有问题请联系客服微信 <span>CC20502015</span> 长按复制</p>
+            <p>有问题请联系客服微信 <span>yjt13225518099</span> 长按复制</p>
         </div>
     </div>
 </template>
