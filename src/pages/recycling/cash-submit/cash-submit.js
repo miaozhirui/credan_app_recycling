@@ -364,13 +364,9 @@ const page = {
                 if (data.statusCode == 200) {
 
                     //如果针对特定的productId做特殊的业务处理的话，处理完，直接返回
-                    if (other.toDiffAction(this.productId)) return;
+                    // if (other.toDiffAction(this.productId)) return;
 
-                    // utils.go('cash-examine-waiting-submit', {
-                    //     productId: this.productId
-                    // })
-                    // utils.go('order-list');
-
+                    utils.go('user-protocol')
                 } else { //1060
 
                     utils.tipInfo({

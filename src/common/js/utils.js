@@ -50,6 +50,11 @@ export default {
 
     //添加事件
     addEvent: function(eventId, label, mapkv) {
+        
+        if(process.env.NODE_PLATFORM != 'app') {
+
+            return;
+        }
 
         let arrs = Array.prototype.slice.call(arguments);
 

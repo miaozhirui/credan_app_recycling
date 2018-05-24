@@ -42,15 +42,15 @@ const page = {
 
         toOrderInfo() {
             
-            if(!this.isAgreeProtocal){
+            // if(!this.isAgreeProtocal){
 
-                utils.tipInfo({
+            //     utils.tipInfo({
 
-                    content:"请勾选协议",
+            //         content:"请勾选协议",
                     
-                })
-                return;
-            } 
+            //     })
+            //     return;
+            // } 
 
             
             let promise = $confirm.show({

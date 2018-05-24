@@ -33,7 +33,6 @@
                 </div>
                 <div class="right" @click="clickAgreeBtn">
                     <p>《用户注册协议》</p>
-                    <!-- <p>《快乐达钞市个人借款协议》</p> -->
                 </div>
             </div>
 

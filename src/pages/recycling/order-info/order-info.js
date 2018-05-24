@@ -80,15 +80,15 @@ const page = {
 
         toSubmit() {
 
-            if (!this.isAgreeProtocal) {
+            // if (!this.isAgreeProtocal) {
 
-                utils.tipInfo({
+            //     utils.tipInfo({
 
-                    content: '请勾选协议'
-                })
+            //         content: '请勾选协议'
+            //     })
 
-                return;
-            }
+            //     return;
+            // }
 
             let params = {
                 "productType": this.productId, //产品类型

@@ -35,6 +35,7 @@ module.exports = {
     "order-list": {
 
         "title": "订单列表",
+        "isHasBack": false,
         isShowTabBar: true,
         highlightSecond: true
     },
@@ -73,6 +74,9 @@ module.exports = {
     },
     "guide-install-app":{
         "title":"授权通讯录"
+    },
+    "user-protocol": {
+        "title": "租赁协议"
     }
 
 }

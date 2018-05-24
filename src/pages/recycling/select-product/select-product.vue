@@ -54,14 +54,14 @@
                 
             </div>
             
-            <div class="agree db bc bm">
+           <!--  <div class="agree db bc bm">
                 <span 
                 class="icon" 
                 :class="{selected: isAgreeProtocal}"
                 @click="toCheckProtocal"
                 ></span>
                 <p>我同意 <span @click="showAgreement">《回购协议》</span></p>
-            </div>
+            </div> -->
             <button class="btn" @click="toOrderInfo">评估领款</button>
         </div>
 

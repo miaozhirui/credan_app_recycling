@@ -109,8 +109,7 @@ let currentPage = {
     //需要清除路由堆栈的页面
     isHopePage() {
 
-        let result = location.href.indexOf('select-product') > -1 ||
-            location.href.indexOf('my-page') > -1;
+        let result = location.href.indexOf('select-product') > -1 || location.href.indexOf('my-page') > -1 || location.href.indexOf('order-list') > -1;
 
         return result;
     },
