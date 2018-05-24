@@ -32,16 +32,7 @@ const page = {
 
     created() {
 
-        // other.getSessionId();
-
-        // if (!storage.get('gpsMsg') || !storage.get('gpsMsg').latitude) {
-
-        //     this.showGpsBox = true
-        // }
-
-        // this.productId = utils.getParams('productId')
         this.productId = storage.get('productId');
-        // this.idenVerify = utils.getParams('idenVerify') == 'true' ? true : '';
 
         this.idenVerify = !!storage.session.get('idenVerify') ? true : false;
 
@@ -127,21 +118,21 @@ const page = {
 
                 }
 
-                // var moreInfoVerifyBtn = document.getElementById('moreInfoVerify')
+                var moreInfoVerifyBtn = document.getElementById('moreInfoVerify')
 
-                // if (result.more) {
+                if (result.more) {
 
-                //     moreInfoVerifyBtn.setAttribute("style", "color: #9A9A9A");
+                    moreInfoVerifyBtn.setAttribute("style", "color: #9A9A9A");
 
-                //     moreInfoVerifyBtn.value = "已提交"
+                    moreInfoVerifyBtn.value = "已提交"
 
-                // } else {
+                } else {
 
-                //     moreInfoVerifyBtn.setAttribute("style", "color: ##57B3FF");
+                    moreInfoVerifyBtn.setAttribute("style", "color: ##57B3FF");
 
-                //     moreInfoVerifyBtn.value = "去完善"
+                    moreInfoVerifyBtn.value = "去完善"
 
-                // }
+                }
 
                 // var sesameVerifyBtn = document.getElementById('sesameVerify')
                 // if (result.zhima) {

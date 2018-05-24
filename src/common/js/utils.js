@@ -52,7 +52,6 @@ export default {
     addEvent: function(eventId, label, mapkv) {
 
         let arrs = Array.prototype.slice.call(arguments);
-        console.log(arrs)
 
         if (window.TDAPP) {
 

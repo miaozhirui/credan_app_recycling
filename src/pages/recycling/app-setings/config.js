@@ -34,7 +34,9 @@ module.exports = {
     },
     "order-list": {
 
-        "title": "订单列表"
+        "title": "订单列表",
+        isShowTabBar: true,
+        highlightSecond: true
     },
     "recycling-pay-page": {
 
@@ -60,7 +62,7 @@ module.exports = {
         "title":"我的",
         "isHasBack": false,
         isShowTabBar: true,
-        highlightSecond: true
+        highlightThree: true
     },
     "app-download":{
 

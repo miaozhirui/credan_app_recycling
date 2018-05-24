@@ -82,9 +82,16 @@ let currentPage = {
 
             if (className.indexOf('two') > -1) {
 
-                if (location.href.indexOf('my-page') > 0) return;
+                if (location.href.indexOf('order-icon') > 0) return;
 
 
+
+                utils.go('order-list');
+            }
+
+            if(className.indexOf('three') > -1) {
+
+                if(location.href.indexOf('my-page ') > 0) return;
 
                 utils.go('my-page');
             }

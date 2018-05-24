@@ -25,14 +25,13 @@
                         </input>
                       </div>
                     </li>
-                 <!--    <li class="db">
-                        <div class="left db1 bm">更多信息</div>
+                    <li class="db">
                         <div class="left db1 bm">地址信息</div>
                         <div class="right db1 br bm">
                         <input @click="btnMoreInfo" readOnly="true" type="button" value="" id="moreInfoVerify">
                         </input>
                       </div>
-                    </li> -->
+                    </li>
                     <!-- <li class="db">
                         <div class="left db1 bm">芝麻分验证</div>
                         <div class="right db1 br bm">

@@ -70,6 +70,7 @@ exports.pageTabBar = function(data) {
     
     let highlightFirst = data.highlightFirst ? 'selected' : '';
     let highlightSecond = data.highlightSecond ? 'selected' : ''
+    let highlightThree = data.highlightThree ? 'selected' : ''
 
     return `
         <div class="global-tab-bar-wrap" style="display:none">
@@ -78,10 +79,17 @@ exports.pageTabBar = function(data) {
                     <span class="icon one"></span> 
                     <span class="one">首页</span>
                 </div>
-                <div class="db1 bc bm fc my ${highlightSecond} tabbar two">
+
+                <div class="db1 bc bm fc order-icon ${highlightSecond} tabbar two">
                     <span class="icon two"></span>
-                    <span class="two">我的</span>
+                    <span class="two">订单</span>
                 </div>
+
+                <div class="db1 bc bm fc my ${highlightThree} tabbar three">
+                    <span class="icon three"></span>
+                    <span class="three">我的</span>
+                </div>
+                
             </div>
         </div>
     `
