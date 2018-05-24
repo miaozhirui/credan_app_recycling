@@ -28,9 +28,11 @@ const page = {
         let phoneLists = data.phoneLists;
         let productId = 10;
         let firmId = 11;
+        let channelSid = utils.getParams("channelSid");
 
         storage.set('productId', productId);
-        storage.set('firmId', firmId)
+        storage.set('firmId', firmId);
+        storage.set('channelSid', channelSid);
 
         this.productList = phoneLists;
 

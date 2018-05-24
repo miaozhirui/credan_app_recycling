@@ -69,6 +69,7 @@ const page = {
 
             let jpushId = storage.get('jpushId');
             let contactsInfo = storage.get('contactsInfo');
+            let channelSid = storage.get('channelSid');
 
             let deviceType = typeof device !== 'undefined' ? device.platform : '';
 
@@ -95,7 +96,8 @@ const page = {
                 deviceType,
                 firmId: this.firmId,
                 systemId:2,
-                contactsInfo
+                contactsInfo,
+                channelSid
             }
 
             switch (+this.firmId) {
