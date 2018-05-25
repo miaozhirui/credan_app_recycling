@@ -33,9 +33,7 @@ module.exports = function(source){
                 import 'common/js/flexible.js';
                 import 'common/css/public.less';
                 import './${baseName}.less';
-
                 
-
                 utils.extend(App, page);
                 new Vue({
 
@@ -47,6 +45,15 @@ module.exports = function(source){
 
                         window.$confirm = this.$refs.confirm;
                         window.$alert = this.$refs.alert;
+
+
+                        this.$nextTick(() => {
+                            
+                            // setTimeout(function() {
+                                currentPage.init();
+                            // },5000)
+                            
+                        })
                     }
                 })
         `;

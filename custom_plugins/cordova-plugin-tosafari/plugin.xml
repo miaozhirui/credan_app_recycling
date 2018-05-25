@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="ToSafari" version="0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>ToSafari</name>
+    <js-module name="ToSafari" src="www/ToSafari.js">
+        <clobbers target="cordova.plugins.ToSafari" />
+    </js-module>
+
+    <platform name="android">  
+        <source-file src="src/android/ToSafari.java" target-dir="src/com/hand/tosafari"/>  
+  
+        <config-file target="res/xml/config.xml" parent="/*">  
+            <feature name="ToSafari">  
+                <param name="android-package" value="com.hand.tosafari.ToSafari"/>  
+            </feature>  
+        </config-file>  
+    </platform> 
+
+     <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="ToSafari">
+                <param name="ios-package" value="ToSafari"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/ToSafari.h" />
+        <source-file src="src/ios/ToSafari.m" />
+    </platform>
+</plugin>

@@ -72,5 +72,13 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "ToSafari": {
+        "source": {
+            "type": "local",
+            "path": "custom_plugins/cordova-plugin-tosafari"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }
