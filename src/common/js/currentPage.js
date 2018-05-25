@@ -101,6 +101,8 @@ let currentPage = {
     },
 
     initUrlStack() {
+        
+        if(process.env.NODE_PLATFORM != 'app') return;
 
         if (this.isHopePage()) {
 
@@ -112,7 +114,8 @@ let currentPage = {
     isHopePage() {
 
         let result = location.href.indexOf('select-product') > -1 ||
-            location.href.indexOf('my-page') > -1;
+            location.href.indexOf('my-page') > -1 ||
+            location.href.indexOf('order-list') > -1
 
         return result;
     },
