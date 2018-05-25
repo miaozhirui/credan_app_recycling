@@ -331,12 +331,12 @@ const page = {
                 return
             }
 
-            // if (!this.moreInfoVerify) {
-            //     utils.tipInfo({
-            //         content: '请完善更多信息'
-            //     })
-            //     return
-            // }
+            if (!this.moreInfoVerify) {
+                utils.tipInfo({
+                    content: '请完善更多信息'
+                })
+                return
+            }
 
             // if(!this.sesameVerify) {
             //   utils.tipInfo({

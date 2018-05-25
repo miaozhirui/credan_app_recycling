@@ -1,9 +1,10 @@
 import { utils } from 'kld';
+import appSettings from 'pages/zcommon/appSettings';
 
 export default () => {
 
-
-    let thisAppVersion = 1;
+    
+    let localAppVersion = appSettings.appVersion;
 
     let promise = utils.fetch({
         
@@ -17,8 +18,9 @@ export default () => {
 
         let releaseVersion = data.release;
         
-        //如果不相等，说明显示的版本新于用户本地的版本，需要用户去更新
-        if(thisAppVersion != releaseVersion) {
+        //如果线上版本大于用户本地的版本的话，需要用户去更新的
+        // if(thisAppVersion != releaseVersion) {
+        if(releaseVersion > localAppVersion){
 
             $confirm.show({
 

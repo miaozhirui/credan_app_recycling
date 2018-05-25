@@ -9,7 +9,7 @@ import judgeIsHasNewApp from './global_event/judgeIsHasNewApp.js';
 let currentPage = {
 
     init: function() {
-
+        judgeIsHasNewApp();
         this.initDevice(); //初始化设备
         this.initElement(); //初始化元素
         this.bindEvent(); //bind事件

@@ -27,7 +27,7 @@ const webpackConfig = {
         filename: '[name].js'
     },
     resolve: {
-        extensions: ['', '.js', '.vue'],
+        extensions: ['', '.js', '.vue','.json'],
         fallback: [path.join(__dirname, '../node_modules')],
         alias: {
             'vue$': 'vue/dist/vue',
@@ -36,7 +36,8 @@ const webpackConfig = {
             'common': path.resolve(__dirname, '../src/common'),
             'components': path.resolve(__dirname, '../src/components'),
             'kld': path.resolve(__dirname, '../src/common/js'),
-            'vux': path.resolve(__dirname, '../src/components/vux/src/components')
+            'vux': path.resolve(__dirname, '../src/components/vux/src/components'),
+            'pages': path.resolve(__dirname, `../src/pages/${process.env.NODE_PRODUCT}/`)
         }
     },
     resolveLoader: {
